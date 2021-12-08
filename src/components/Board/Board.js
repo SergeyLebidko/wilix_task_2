@@ -11,6 +11,8 @@ function Board({size}) {
         setField(createFieldData(size));
     }, [size]);
 
+    const hasCardOpen = () => field.every(data => data.hasOpen);
+
     const cardClickHandler = id => {
         setField(oldData => oldData.map(data => data.id === id ? {...data, hasOpen: true} : {...data}));
     }
@@ -30,7 +32,7 @@ function Board({size}) {
                     />
                 )}
             </div>
-            <button className="button">Сыграть еще раз</button>
+            {hasCardOpen() && <button className="button">Сыграть еще раз</button>}
         </div>
     );
 }
