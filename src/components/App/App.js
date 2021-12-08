@@ -4,7 +4,8 @@ import SizeForm from "../SizeForm/SizeForm";
 
 function App() {
     const [size, setSize] = useState(null);
-    return size ? <Board size={size}/> : <SizeForm setSize={setSize}/>;
+    const sizeReset = () => setSize(null);
+    return size ? <Board size={size} sizeReset={sizeReset}/> : <SizeForm setSize={setSize}/>;
 }
 
 export default App;

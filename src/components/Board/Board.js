@@ -4,7 +4,7 @@ import "./Board.scss";
 import {createFieldData} from "../../utils";
 import Card from "../Card/Card";
 
-function Board({size}) {
+function Board({size, sizeReset}) {
     const [field, setField] = useState([]);
 
     useEffect(() => {
@@ -32,13 +32,14 @@ function Board({size}) {
                     />
                 )}
             </div>
-            {hasCardOpen() && <button className="button">Сыграть еще раз</button>}
+            {hasCardOpen() && <button className="button" onClick={sizeReset}>Сыграть еще раз</button>}
         </div>
     );
 }
 
 Board.propTypes = {
-    size: PropTypes.number
+    size: PropTypes.number,
+    sizeReset: PropTypes.func
 }
 
 export default Board;
