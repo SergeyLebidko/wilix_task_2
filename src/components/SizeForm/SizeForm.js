@@ -7,6 +7,7 @@ function SizeForm({setSize}) {
     const inputRef = useRef(null);
 
     useEffect(() => {
+        inputRef.current.value = DEFAULT_SIZE;
         inputRef.current.focus();
     }, []);
 

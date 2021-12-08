@@ -1,11 +1,23 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import "./Board.scss";
+import {createFieldData} from "../../utils";
 
 function Board({size}) {
+    const [field, setField] = useState([]);
+
+    useEffect(() => {
+        setField(createFieldData(size));
+    }, []);
+
     return (
         <div>
-            Игровое поле размера {size}
+            <h1>Pair game</h1>
+            <div>
+                {field.length > 0 &&
+                field.map(({key, content}) => <div key={key}>{content}</div>)
+                }
+            </div>
         </div>
     );
 }
