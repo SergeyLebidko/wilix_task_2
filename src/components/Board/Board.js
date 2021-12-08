@@ -9,7 +9,11 @@ function Board({size}) {
 
     useEffect(() => {
         setField(createFieldData(size));
-    }, []);
+    }, [size]);
+
+    const cardClickHandler = id => {
+        setField(oldData => oldData.map(data => data.id === id ? {...data, hasOpen: true} : {...data}));
+    }
 
     return (
         <div className="board">
@@ -17,8 +21,14 @@ function Board({size}) {
             <h3 className="board__timer">таймер</h3>
             <div className="board__field" style={{gridTemplateColumns: `repeat(${size}, 1fr)`}}>
                 {field.length > 0 &&
-                field.map(({key, content}) => <Card key={key} size={size} content={content}/>)
-                }
+                field.map(cardData =>
+                    <Card
+                        key={cardData.id}
+                        size={size}
+                        {...cardData}
+                        cardClickHandler={cardClickHandler}
+                    />
+                )}
             </div>
             <button className="button">Сыграть еще раз</button>
         </div>

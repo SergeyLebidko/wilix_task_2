@@ -2,7 +2,7 @@ import React, {useCallback} from "react";
 import PropTypes from "prop-types";
 import "./Card.scss";
 
-function Card({size, content}) {
+function Card({size, id, content, hasOpen, cardClickHandler}) {
     const getCardInline = useCallback(() => {
         const base = Math.floor(70 / size);
         return {
@@ -13,15 +13,18 @@ function Card({size, content}) {
     }, [size]);
 
     return (
-        <div className="card" style={getCardInline()}>
-            {content}
+        <div className="card" style={getCardInline()} onClick={() => cardClickHandler(id)}>
+            {hasOpen && content}
         </div>
     );
 }
 
 Card.propTypes = {
     size: PropTypes.number,
-    content: PropTypes.number
+    id: PropTypes.string,
+    content: PropTypes.number,
+    hasOpen: PropTypes.bool,
+    cardClickHandler: PropTypes.func
 }
 
 export default Card;

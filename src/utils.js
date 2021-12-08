@@ -15,7 +15,7 @@ export function createFieldData(size) {
                 content = numbers.splice(Math.floor(Math.random() * numbers.length), 1)[0];
             }
             result.push({
-                key: `${row}:${col}`,
+                id: `${row}:${col}`,
                 content,
                 hasOpen: false
             });
