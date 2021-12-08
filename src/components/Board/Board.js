@@ -1,12 +1,13 @@
 import React, {useEffect, useRef, useState} from "react";
 import PropTypes from "prop-types";
-import "./Board.scss";
-import {createFieldData} from "../../utils";
 import Card from "../Card/Card";
+import {createFieldData} from "../../utils";
+import {TIMER_START_VALUE} from "../../constants/settings";
+import "./Board.scss";
 
 function Board({size, sizeReset}) {
     const [field, setField] = useState([]);
-    const [timerValue, setTimerValue] = useState(60);
+    const [timerValue, setTimerValue] = useState(TIMER_START_VALUE);
 
     const timer = useRef(null);
     const selected = useRef([]);
@@ -47,7 +48,7 @@ function Board({size, sizeReset}) {
             if (timerValue === 0) {
                 return 'Время истекло...';
             } else {
-                return `Вы справились за ${60 - timerValue} сек!`;
+                return `Вы справились за ${TIMER_START_VALUE - timerValue} сек!`;
             }
         } else {
             return `Осталось: ${timerValue} сек.`;
@@ -61,21 +62,15 @@ function Board({size, sizeReset}) {
         // Запрещаем клики по уже открытым карточкам
         if (getHasOpenForId(id)) return;
 
-
-        if (selected.current.length < 2) {
-            selected.current.push(id);
-            setCardsOpenFlag(selected.current, true);
-            return;
+        selected.current.push(id);
+        if (selected.current.length === 3) {
+            const firstSelect = selected.current[0];
+            const secondSelect = selected.current[1];
+            if (getContentForId(firstSelect) !== getContentForId(secondSelect)) {
+                setCardsOpenFlag([firstSelect, secondSelect], false);
+            }
+            selected.current = [selected.current[2]];
         }
-
-        if (getContentForId(selected.current[0]) === getContentForId(selected.current[1])) {
-            selected.current = [id];
-            setCardsOpenFlag(selected.current, true);
-            return;
-        }
-
-        setCardsOpenFlag(selected.current, false);
-        selected.current = [id];
         setCardsOpenFlag(selected.current, true);
     }
 
