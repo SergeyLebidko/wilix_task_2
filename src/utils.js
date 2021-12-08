@@ -12,7 +12,7 @@ export function createFieldData(size) {
             if (numbers.length === 1) {
                 content = numbers[0];
             } else {
-                content = numbers.splice(Math.floor(Math.random() * numbers.length), 1);
+                content = numbers.splice(Math.floor(Math.random() * numbers.length), 1)[0];
             }
             result.push({
                 key: `${row}:${col}`,

@@ -22,18 +22,20 @@ function SizeForm({setSize}) {
     }
 
     return (
-        <form className="size_form">
-            <label className="size_form__label" htmlFor="size_input">
-                Количество карточек по вертикали и горизонтали:
-            </label>
-            <input className="size_form__size_input" ref={inputRef} id="size_input"/>
-            <p className="size_form__warning_text">
-                Обратите внимание: в поле можно ввести только чётное число от 2 до 10.
-                Если значение некорректное (то есть нечётное или не в пределах 2-10),
-                то будет установлено количество карточек по-умолчанию ({DEFAULT_SIZE}).
-            </p>
-            <button className="button" onClick={startHandler}>Начать игру</button>
-        </form>
+        <div className="size_form">
+            <form className="size_form__form_block">
+                <label className="size_form__label" htmlFor="size_input">
+                    Количество карточек по вертикали и горизонтали:
+                </label>
+                <input className="size_form__size_input" ref={inputRef} id="size_input"/>
+                <p className="size_form__warning_text">
+                    Обратите внимание: в поле можно ввести только чётное число от 2 до 10.
+                    Если значение некорректное (то есть нечётное или не в пределах 2-10),
+                    то будет установлено количество карточек по-умолчанию ({DEFAULT_SIZE}).
+                </p>
+                <button className="button" onClick={startHandler}>Начать игру</button>
+            </form>
+        </div>
     );
 }
 

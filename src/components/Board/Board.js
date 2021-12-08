@@ -12,13 +12,15 @@ function Board({size}) {
     }, []);
 
     return (
-        <div>
-            <h1>Pair game</h1>
-            <div>
+        <div className="board">
+            <h1 className="board__title">Pair game</h1>
+            <h3 className="board__timer">таймер</h3>
+            <div className="board__field" style={{gridTemplateColumns: `repeat(${size}, 1fr)`}}>
                 {field.length > 0 &&
-                field.map(({key, content}) => <Card key={key} content={content}/>)
+                field.map(({key, content}) => <Card key={key} size={size} content={content}/>)
                 }
             </div>
+            <button className="button">Сыграть еще раз</button>
         </div>
     );
 }
