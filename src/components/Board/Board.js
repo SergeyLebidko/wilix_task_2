@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import PropTypes from "prop-types";
 import "./Board.scss";
 import {createFieldData} from "../../utils";
+import Card from "../Card/Card";
 
 function Board({size}) {
     const [field, setField] = useState([]);
@@ -15,7 +16,7 @@ function Board({size}) {
             <h1>Pair game</h1>
             <div>
                 {field.length > 0 &&
-                field.map(({key, content}) => <div key={key}>{content}</div>)
+                field.map(({key, content}) => <Card key={key} content={content}/>)
                 }
             </div>
         </div>
