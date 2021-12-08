@@ -8,7 +8,7 @@ function App() {
 
     return (
         <div>
-            {size ? <Board/> : <SizeForm/>}
+            {size ? <Board size={size}/> : <SizeForm setSize={setSize}/>}
         </div>
     );
 }
