@@ -1,0 +1,26 @@
+// Пресеты цветов, теней, градиентов и радиуса границ
+$white: rgb(255, 255, 255);
+$black: rgb(50, 50, 50);
+$gray: rgb(128, 128, 128);
+
+$background: linear-gradient(to right bottom, #fbfdfd, #f4f8f8, #eef2f4, #e8ecf0, #e4e6ec, #e1e4ea, #dfe1e7, #dcdfe5, #dbe0e4, #dae0e3, #dae0e1, #dbe0e0);
+$shadow: 6px 6px 30px -6px rgba(34, 60, 80, 0.13);
+$radius: 5px;
+
+// Общие стили
+.button {
+  border: none;
+  background-image: linear-gradient(to bottom, DeepSkyBlue, DodgerBlue);
+  padding: 1em 4em;
+  color: $white;
+  border-radius: $radius;
+  cursor: pointer;
+
+  &:focus {
+    outline: $black solid 2px;
+  }
+
+  &:active {
+    background-image: linear-gradient(to top, DeepSkyBlue, DodgerBlue);
+  }
+}

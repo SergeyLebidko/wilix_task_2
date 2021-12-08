@@ -7,7 +7,7 @@ function App() {
     const [size, setSize] = useState(null);
 
     return (
-        <div>
+        <div className="app">
             {size ? <Board size={size}/> : <SizeForm setSize={setSize}/>}
         </div>
     );

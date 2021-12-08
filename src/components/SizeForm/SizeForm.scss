@@ -1,0 +1,42 @@
+@import "../../styles/presets";
+
+.size_form {
+  background-color: $white;
+  box-shadow: $shadow;
+  padding: 2em;
+  border-radius: $radius;
+  width: 25em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  > * + * {
+    margin-top: 1em;
+  }
+
+  &__label {
+    font-size: 1.2em;
+    text-align: center;
+  }
+
+  &__size_input {
+    border: 1px solid $gray;
+    outline: none;
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0.5em;
+    border-radius: $radius;
+
+    &:focus {
+      border: 1px solid transparent;
+      outline: $black solid 2px;
+    }
+  }
+
+  &__warning_text {
+    font-size: 0.9em;
+    color: $gray;
+    text-align: justify;
+  }
+}
