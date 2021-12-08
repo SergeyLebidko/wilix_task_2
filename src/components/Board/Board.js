@@ -66,9 +66,12 @@ function Board({size, sizeReset}) {
         if (selected.current.length === 3) {
             const firstSelect = selected.current[0];
             const secondSelect = selected.current[1];
+
+            // Если две ранее открытые карточки содержат разные числа - закрываем их
             if (getContentForId(firstSelect) !== getContentForId(secondSelect)) {
                 setCardsOpenFlag([firstSelect, secondSelect], false);
             }
+
             selected.current = [selected.current[2]];
         }
         setCardsOpenFlag(selected.current, true);
