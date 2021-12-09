@@ -5,6 +5,7 @@
   border: 1px solid $gray-light;
   border-radius: $radius;
   box-shadow: $shadow;
+  user-select: none;
   cursor: pointer;
 
   display: flex;
