@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/wilix_task_2/static/css/main.ddc6575c.chunk.css",
-    "main.js": "/wilix_task_2/static/js/main.68dc032f.chunk.js",
-    "main.js.map": "/wilix_task_2/static/js/main.68dc032f.chunk.js.map",
+    "main.css": "/wilix_task_2/static/css/main.5d6224c6.chunk.css",
+    "main.js": "/wilix_task_2/static/js/main.423d16b4.chunk.js",
+    "main.js.map": "/wilix_task_2/static/js/main.423d16b4.chunk.js.map",
     "runtime-main.js": "/wilix_task_2/static/js/runtime-main.36c3fc85.js",
     "runtime-main.js.map": "/wilix_task_2/static/js/runtime-main.36c3fc85.js.map",
-    "static/js/2.6e838ddd.chunk.js": "/wilix_task_2/static/js/2.6e838ddd.chunk.js",
-    "static/js/2.6e838ddd.chunk.js.map": "/wilix_task_2/static/js/2.6e838ddd.chunk.js.map",
+    "static/js/2.a0959e7f.chunk.js": "/wilix_task_2/static/js/2.a0959e7f.chunk.js",
+    "static/js/2.a0959e7f.chunk.js.map": "/wilix_task_2/static/js/2.a0959e7f.chunk.js.map",
     "index.html": "/wilix_task_2/index.html",
-    "static/css/main.ddc6575c.chunk.css.map": "/wilix_task_2/static/css/main.ddc6575c.chunk.css.map",
-    "static/js/2.6e838ddd.chunk.js.LICENSE.txt": "/wilix_task_2/static/js/2.6e838ddd.chunk.js.LICENSE.txt"
+    "static/css/main.5d6224c6.chunk.css.map": "/wilix_task_2/static/css/main.5d6224c6.chunk.css.map",
+    "static/js/2.a0959e7f.chunk.js.LICENSE.txt": "/wilix_task_2/static/js/2.a0959e7f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.36c3fc85.js",
-    "static/js/2.6e838ddd.chunk.js",
-    "static/css/main.ddc6575c.chunk.css",
-    "static/js/main.68dc032f.chunk.js"
+    "static/js/2.a0959e7f.chunk.js",
+    "static/css/main.5d6224c6.chunk.css",
+    "static/js/main.423d16b4.chunk.js"
   ]
 }
