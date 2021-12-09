@@ -31,17 +31,9 @@ function Board({size, sizeReset}) {
         setField(oldData => oldData.map(data => ids.includes(data.id) ? {...data, hasOpen: flag} : {...data}));
     }
 
-    const getContentForId = id => {
-        for (const data of field) {
-            if (data.id === id) return data.content;
-        }
-    }
+    const getContentForId = id => field.find(data => data.id === id).content;
 
-    const getHasOpenForId = id => {
-        for (const data of field) {
-            if (data.id === id) return data.hasOpen;
-        }
-    }
+    const getHasOpenForId = id => field.find(data => data.id === id).hasOpen;
 
     const getMessage = () => {
         if (hasEndGame()) {
