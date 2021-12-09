@@ -1,10 +1,11 @@
 import React, {useCallback} from "react";
 import PropTypes from "prop-types";
+import {FIELD_BASE} from "../../constants/settings";
 import "./Card.scss";
 
 function Card({size, id, content, hasOpen, cardClickHandler}) {
     const getCardInline = useCallback(() => {
-        const base = Math.floor(70 / size);
+        const base = Math.floor(FIELD_BASE / size);
         return {
             width: `${base}vmin`,
             height: `${base}vmin`,
