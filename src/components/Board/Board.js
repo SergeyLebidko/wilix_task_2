@@ -20,7 +20,7 @@ function Board({size, sizeReset}) {
 
     // Если время вышло или все карты открыты - останавливаем таймер
     useEffect(() => {
-        if (timerValue === 0 || hasEndGame()) {
+        if (hasEndGame()) {
             clearInterval(timer.current);
         }
     }, [timerValue, field]);
